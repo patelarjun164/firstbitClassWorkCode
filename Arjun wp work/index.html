@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="demo.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        Enter number 1 <input type="text" id="inp1"> 
+        <br><br>Enter number 2 <input type="text" id="inp2"> 
+        <br><br>
+        <button onclick="calculate('+')">Add</button>
+        <button onclick="calculate('-')">Subtract</button>
+        <button onclick="calculate('*')">Multiply</button>
+        <button onclick="calculate('/')">Divide</button>
+        <button onclick="calculate('%')">Mod</button>
+        <br><br>
+        <div style="width: 300px; border: 2px solid red;" id="result"></div>
+        
+    </div>
+    <label for="colorCheck" id="labelColorCheck">
+        <input type="checkbox" name="color" id="colorCheck" onclick="handleCheckBox()">
+        color
+    </label>
+    <input type="color" id="colorPicker" onInput="applyColor()">
+    <br />
+    <br />
+
+    <label for="borderCheck">
+        <input type="checkbox" id="borderCheck" onclick="toggleBorderOptions()">
+        Border Options
+    </label>
+    <div id="borderOptions">
+        <label>Border Type: 
+            <select id="borderType" onchange="updateBorder()">
+                <option value="solid">Solid</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="double">Double</option>
+                <option value="groove">Groove</option>
+            </select>
+        </label>
+        <br><br>
+
+        <label>Border Width: 
+            <input type="range" id="borderWidth" min="1" max="10" value="2" onInput="updateBorder()">
+            <span id="borderWidthValue">2px</span>
+        </label>
+        <br><br>
+
+        <label>Border Color: 
+            <input type="color" id="borderColor" onInput="updateBorder()">
+        </label>
+        <br><br>
+
+    </div>
+
+    <br> <br>
+
+    <input type="text" id="searchBox" autocomplete="off" placeholder="Type to search..." oninput="filterResults()">
+    <div id="results"></div>
+    <div id="descriptionBox">
+        <div id="description"></div>
+        <button class="close-btn" onclick="closeButton()">❌</button>
+    </div>
+    
+</div>
+</body>
+</html>
