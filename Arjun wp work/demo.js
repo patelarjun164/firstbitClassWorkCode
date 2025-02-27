@@ -116,9 +116,9 @@ function filterResults() {
 
     if (query === "") return;
     console.log(query);
-    const filteredData = Object.keys(data).filter(key => key.includes(query));
+    const selectdAta = Object.keys(data).filter(key => key.includes(query));
 
-    filteredData.forEach(key => {
+    selectdAta.forEach(key => {
         const p = document.createElement("p");
         p.innerHTML = key;
         p.onclick = () => showDescription(key);
@@ -156,3 +156,65 @@ function closeButton() {
     const query = document.getElementById("searchBox")
     query.value = "";
 }
+
+function factorial(){
+    let num = parseInt(document.getElementById("input").value)
+    fact = 1
+    for(let i=1;i<=num;i++){
+        fact = fact*i
+    }
+    document.getElementById("result2").innerHTML="The factorial of num is "+fact;
+}
+
+
+function PrimeOrNot(){
+    let num = parseInt(document.getElementById("input").value)
+
+    if (isNaN(num) || num <= 0) {
+        document.getElementById("result2").innerHTML = "Please enter a valid positive number.";
+    return;
+    }
+
+    if (num === 1) {
+        document.getElementById("result2").innerHTML = "1 is neither prime nor composite.";
+        return;
+    }
+    let isPrime = true;
+    for (let i =2;i <= num / 2;i++) {
+        if (num % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    if (isPrime) {
+        document.getElementById("result2").innerHTML="The factorial of num is Prime";
+    } else {
+        document.getElementById("result2").innerHTML="The factorial of num is not prime";
+    }
+
+}
+document.addEventListener("DOMContentLoaded",function(){document.getElementById("buttonID").addEventListener("click",function(){
+    let num = parseInt(document.getElementById("input").value)
+    fact = 1
+    for(let i=1;i<=num;i++){
+        fact = fact*i
+    }
+    document.getElementById("result").innerHTML="The factorial of num is "+fact;
+})
+})
+document.addEventListener("DOMContentLoaded",function(){
+document.getElementById("button2").addEventListener("mouseover",function(){
+    inputelement =document.getElementById("pass")
+    inputelement.type="text";
+    button2.innerHTML = "hide"
+
+})
+})
+document.addEventListener("DOMContentLoaded",function(){
+document.getElementById("button2").addEventListener("mouseout",function(){
+    inputelement =document.getElementById("pass")
+    inputelement.type="password"
+    button2.innerHTML = "show"
+
+})
+})
